@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                clifford: '#da373d',
+                time: 'rgb(60 72 88 / 70%)',
+                foot: '#202942'
+            }
+            }
+        }
+        }
+    </script>
+    <style>
+        #navBar{
+            transition: all .5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- landing page -->
+    <section>
+        <div class="h-[100vh] bg-[url('./img/01.jpg')] bg-cover bg-center relative">
+            <div class="absolute top-0 left-0 right-0 bottom-0 bg-time">
+                <nav id="navBar" class="lg:px-[50px] xl:px-[200px] bg-white border-b lg:border-0 lg:bg-transparent px-[20px] py-5 z-50 flex items-center justify-between fixed top-0 left-0 right-0 z-50">
+                    <div class="flex items-center gap-1">
+                        <img class="size-6" src="./img/logo-icon.png" alt="">
+                        <h1 id="logoText" class="text-2xl font-semibold lg:text-white">Bornian</h1>
+                    </div>
+                    <!-- desktop view of nav -->
+                    <ul class="hidden lg:flex items-center gap-8">
+                        <li id="myList" class="text-white text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+                        <li id="myList1" class="text-white text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+                        <li id="myList2" class="text-white text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+                        <li id="myList3" class="text-white text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+                        <li id="myList4" class="text-white text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+                    </ul>
+                    <div class="hidden lg:flex gap-1">
+                        <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+                        <button class="border text-sm border-blue-700 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+                    </div>
+                    <!-- bugger menu -->
+                    <div id="menu" class="lg:hidden">
+                        <img class="size-8 cursor-pointer" src="./img/menu.png" alt="">
+                    </div>
+                </nav>
+                <!-- mobile view of nav -->
+                <div id="mobileView" class="bg-white px-[20px] py-4 lg:hidden hidden z-50 absolute  top-0 left-0 right-0">
+                    <div id="closeMenu" class="text-2xl font-semibold text-right cursor-pointer">X</div>
+                    <ul class="flex flex-col gap-5 mb-[20px]">
+                        <li class="text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+                        <li class="text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+                        <li class="text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+                        <li class="text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+                        <li class="text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+                    </ul>
+                    <div class="flex gap-3">
+                        <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+                        <button class="border text-sm border-blue-600 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+                    </div>
+                </div>
+                <!-- header text -->
+                <div id="hero" class="xl:mt-[200px] lg:mt-[150px] mt-[200px] lg:ml-[50px] xl:ml-[200px] ml-[20px]">
+                    <div class="mb-[10px]">
+                        <img class="lg:size-14 size-12" src="./img/logo-icon.png" alt="">
+                    </div>
+                    <div class="lg:w-[400px] w-[200px] mb-[20px]">
+                        <h1 class="text-white lg:text-7xl text-4xl font-bold lg:leading-[90px] leading-[50px]">Meet The Best Doctor</h1>
+                    </div>
+                    <div class="lg:w-[600px] md:w-[500px] lg:mb-[30px] mb-[20px]">
+                        <small class="text-gray-400 text-lg font-medium">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</small>
+                    </div>
+                    <div class="">
+                        <button class="bg-blue-600 rounded-md text-white px-4 py-2 hover:bg-blue-700" onclick="showAppointmentForm()">Make Appointment</button>
+                    </div>
+                    <div>
+                        <small class="text-gray-400 text-[15px] font-medium">T&C apply. Please read Terms and Conditions </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about -->
+    <section class="pt-[100px]">
+        <div class="lg:px-[50px] xl:px-[200px] px-[20px] lg:grid lg:grid-cols-2 lg:gap-8 py-5">
+            <div  class="lg:mb-[0] mb-[50px] mx-auto">
+                <img class="" src="./img/about-2.png" alt="">
+            </div>
+            <div class="lg:pt-[200px]">
+                <h1 class="font-semibold text-3xl mb-5">About Our Treatments</h1>
+                <p class="text-gray-400 text-md mb-[20px]">Great doctor if you need your family member to get effective immediate assistance, examination, emergency treatment or a simple consultation. Thank you.</p>
+                <p class="text-gray-400 text-md mb-[30px]">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum
+                     is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin.
+                    It contains a series of real Latin words.
+                </p>
+                <button class="bg-blue-600 rounded-md text-white px-4 py-2 hover:bg-blue-700">Read more</button>
+            </div>
+        </div>
+    </section>
+    <!-- medical services -->
+    <section class="pt-[100px] mb-[100px]">
+        <div class="lg:px-[50px] xl:px-[200px] px-[20px]">
+            <div class="text-center lg:w-[55%] mx-auto">
+                <span class="bg-blue-100 border border-blue-300 px-3 text-blue-600 text-sm rounded-full">Department</span>
+                <h1 class="font-semibold text-3xl my-5">Our Medical Services</h1>
+                <p class="text-gray-400 text-md">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+            </div>
+            <div class="grid lg:grid-cols-4 grid-cols-2 gap-10 pt-[70px]">
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/view.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Eye Care</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/psychotherapy.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Psychotherapy</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/stethoscope.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Primary Care</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/dental-care.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Dental Care</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/knee-joint.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Orthopedic</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/cardiology.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Cardiology</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/fallopian-tubes.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Gynecology</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+                <div>
+                    <div class="bg-blue-100 rounded-md flex justify-center items-center mb-[10px] h-[50px] w-[50px]">
+                        <img class="size-6" src="./img/neurology.png" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl">Neurology</h1>
+                    <p class="text-gray-400 text-md my-[10px]">There is now an abundance of readable dummy texts required purely to fill a space.</p>
+                    <button class="text-blue-600">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- availability -->
+    <section class="py-[100px] bg-gray-100">
+        <div class="lg:px-[50px] xl:px-[200px] px-[20px] mb-[50px]">
+            <div class="text-center lg:w-[55%] mx-auto">
+                <span class="bg-blue-100 border border-blue-300 px-3 text-blue-600 text-sm rounded-full">Availability</span>
+                <h1 class="font-semibold text-3xl my-5">Doctors Time Table</h1>
+                <p class="text-gray-400 text-md">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+            </div>
+        </div>
+        <div class="overflow-auto w-[99%] mx-auto">
+            <table class="bg-white border-2">
+                <thead>
+                    <tr class="border-2">
+                        <th class="min-w-[120px] border-2 text-center py-4">Time Table</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Monday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Tuesday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Wednesday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Thursday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Friday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Saturday</th>
+                        <th class="min-w-[200px] border-2 text-center py-4">Sunday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-2" >
+                        <th class="text-center py-5">09:00AM</th>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc5.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Jennifer Ballance</h6>
+                                    <small class="">Cardiology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00PM - 10:00PM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td></td>
+                        <td class="border-2"></td>
+                        <td class="p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc1.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Calvin Carlo</h6>
+                                    <small class="">Eye Care</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td></td>
+                    </tr>
+                    <tr class="border-2">
+                        <th class="text-center py-5">11:00AM</th>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc3.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Alia Reddy</h6>
+                                    <small class="">Psychotherapy</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc1.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Calvin Carlo</h6>
+                                    <small class="">Eye Care</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc2.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Cristino Murphy</h6>
+                                    <small class="">Gynecology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                    </tr>
+                    <tr class="border-2">
+                        <th class="text-center py-5">02:00pm</th>
+                        <td class="border-2"></td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc2.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Cristino Murphy</h6>
+                                    <small class="">Gynecology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc6.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Tara Arrington</h6>
+                                    <small class="">Neurology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2"></td>
+                    </tr>
+                    <tr class="border-2">
+                        <th class="text-center py-5">04:00pm</th>
+                        <td class="border-2"></td>
+                        <td class="border-2"></td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc6.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Tara Arrington</h6>
+                                    <small class="">Neurology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">04:00PM - 05:00PM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc6.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Tara Arrington</h6>
+                                    <small class="">Neurology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">04:00AM - 06:00PM</small>
+                        </td>
+                    </tr>
+                    <tr class="border-2">
+                        <th class="text-center py-5">06:00pm</th>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc3.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Alia Reddy</h6>
+                                    <small class="">Psychotherapy</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc4.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Toni Kovar</h6>
+                                    <small class="">Orthopedic</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00PM - 10:00PM</small>
+                        </td>
+                        <td></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc5.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Jennifer Ballance</h6>
+                                    <small class="">Cardiology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00PM - 10:00PM</small>
+                        </td>
+                        <td></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc1.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Calvin Carlo</h6>
+                                    <small class="">Eye Care</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                    </tr>
+                    <tr class="border-2">
+                        <th class="border-2 py-5">09:00pm</th>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 MB-3">
+                                <img class="size-10 rounded-full border" src="./img/doc6.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Tara Arrington</h6>
+                                    <small class="">Neurology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00AM - 10:00AM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc5.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Jennifer Ballance</h6>
+                                    <small class="">Cardiology</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00PM - 10:00PM</small>
+                        </td>
+                        <td class="border-2"></td>
+                        <td class="border-2 p-3">
+                            <div class="flex items-center gap-3 mb-3">
+                                <img class="size-10 rounded-full border" src="./img/doc4.jpg" alt="">
+                                <div>
+                                    <h6 class="font-medium m-0">Toni Kovar</h6>
+                                    <small class="">Orthopedic</small>
+                                </div>
+                            </div>
+                            <small class="bg-blue-100 rounded py-1 px-2 d-block text-center">09:00PM - 10:00PM</small>
+                        </td>
+                        <td class="border-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- doctors -->
+    <section class="py-[100px]">
+        <div class="lg:px-[50px] xl:px-[200px] px-[20px]">
+            <div class="text-center lg:w-[55%] mx-auto mb-[70px]">
+                <h1 class="font-semibold text-3xl my-5">Doctors</h1>
+                <p class="text-gray-400 text-md">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+            </div>
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 mb-[50px]">
+                <div class="border">
+                    <div>
+                        <img src="./img/doc1.jpg" alt="">
+                    </div>
+                    <div class="text-center p-5">
+                        <h1 class="font-semibold text-xl">Calvin Carlo</h1>
+                        <p class="text-gray-400 text-[15px]">Eye Care</p>
+                    </div>
+                </div>
+                <div class="border">
+                    <div>
+                        <img src="./img/doc2.jpg" alt="">
+                    </div>
+                    <div class="text-center p-5">
+                        <h1 class="font-semibold text-xl">Cristino Murphy</h1>
+                        <p class="text-gray-400 text-[15px]">Gynecology</p>
+                    </div>
+                </div>
+                <div class="border">
+                    <div>
+                        <img src="./img/doc3.jpg" alt="">
+                    </div>
+                    <div class="text-center p-5">
+                        <h1 class="font-semibold text-xl">Alia Reddy</h1>
+                        <p class="text-gray-400 text-[15px]">Psychotherapy</p>
+                    </div>
+                </div>
+                <div class="border">
+                    <div>
+                        <img src="./img/doc4.jpg" alt="">
+                    </div>
+                    <div class="text-center p-5">
+                        <h1 class="font-semibold text-xl">Toni Kovar</h1>
+                        <p class="text-gray-400 text-[15px]">Orthopedic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="bg-blue-600 rounded-md text-white px-4 py-2 hover:bg-blue-700">See More</button>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="bg-foot lg:px-[50px] xl:px-[200px] px-[20px]">
+            <div class="bolck lg:flex gap-[80px] py-14 border-b">
+                <div class="mb-10">
+                    <div class="flex items-center gap-1 mb-4">
+                        <img class="size-6" src="./img/logo-icon.png" alt="">
+                        <h1 class="text-2xl font-semibold text-white">Bornian</h1>
+                    </div>
+                    <p class="text-gray-400 text-md">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+                </div>
+                <div class="mb-10">
+                    <h1 class="text-2xl font-semibold text-white mb-5">Company</h1>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> About us</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Services</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Team</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Project</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Blog</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Login</a></p>
+                </div>
+                <div class="mb-10">
+                    <h1 class="text-2xl font-semibold text-white mb-5">Departments</h1>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Eye Care</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Psychotherapy</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Dental Care</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Orthopedic</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Cardiology</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Gynecology</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Neurology</a></p>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-semibold text-white mb-5">Contact us</h1>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">Email: contact@example.com</a></p>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">Phone: +152 534-468-854</a></p>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">View on Google map</a></p>
+                </div>
+            </div>
+            <div class="text-center flex flex-col lg:flex-row justify-center items-center lg:justify-between py-10">
+                <p class="text-gray-400 text-md mb-5 lg:m-0">2024 © Bornian. Design with ❤️ by Shreethemes and Recreated ❤️❤️ by Jackson.</p>
+                <ul class="flex items-center gap-2">
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Terms</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Privacy</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">About</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.addEventListener('scroll', function(){
+            var scrollPosition = window.scrollY || window.pageYOffset
+            if (scrollPosition > 50) {
+                document.querySelector('#navBar').classList.add('lg:bg-white', 'shadow')
+                document.getElementById('logoText').classList.add('lg:text-black')
+                document.querySelector('#myList').classList.add('lg:text-black')
+                document.querySelector('#myList1').classList.add('lg:text-black')
+                document.querySelector('#myList2').classList.add('lg:text-black')
+                document.querySelector('#myList3').classList.add('lg:text-black')
+                document.querySelector('#myList4').classList.add('lg:text-black')
+            } else{
+                document.querySelector('#navBar').classList.remove('lg:bg-white', 'shadow')
+                document.getElementById('logoText').classList.remove('lg:text-black')
+                document.querySelector('#myList').classList.remove('lg:text-black')
+                document.querySelector('#myList1').classList.remove('lg:text-black')
+                document.querySelector('#myList2').classList.remove('lg:text-black')
+                document.querySelector('#myList3').classList.remove('lg:text-black')
+                document.querySelector('#myList4').classList.remove('lg:text-black')
+            }
+        })
+    </script>
+</body>
+</html>

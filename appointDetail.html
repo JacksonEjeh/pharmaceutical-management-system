@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                clifford: '#da373d',
+                time: 'rgb(60 72 88 / 70%)',
+                foot: '#202942'
+            }
+            }
+        }
+        }
+    </script>
+    <style>
+        .name{
+            align-items: safe;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navBar" class="lg:px-[50px] xl:px-[200px] bg-white border-b lg:border-0 shadow px-[20px] py-5 z-50 flex items-center justify-between fixed top-0 left-0 right-0 z-50">
+        <div class="flex items-center gap-1">
+            <img class="size-6" src="./img/logo-icon.png" alt="">
+            <h1 class="text-2xl font-semibold">Bornian</h1>
+        </div>
+        <!-- desktop view of nav -->
+        <ul class="hidden lg:flex items-center gap-8">
+            <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+            <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+            <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+            <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+            <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+        </ul>
+        <div class="hidden lg:flex gap-1">
+            <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+            <button class="border text-sm border-blue-700 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+        </div>
+        <!-- bugger menu -->
+        <div id="menu" class="lg:hidden">
+            <img class="size-8 cursor-pointer" src="./img/menu.png" alt="">
+        </div>
+    </nav>
+    <!-- mobile view of nav -->
+    <div id="mobileView" class="bg-white px-[20px] py-3 lg:hidden hidden z-50 absolute  top-0 left-0 right-0">
+        <div id="closeMenu" class="text-2xl font-semibold text-right cursor-pointer">X</div>
+        <ul class="flex flex-col gap-5 mb-[20px]">
+            <li class="text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+            <li class="text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+            <li class="text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+            <li class="text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+            <li class="text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+        </ul>
+        <div class="flex gap-3">
+            <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+            <button class="border text-sm border-blue-600 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+        </div>
+    </div>
+    <!-- hero text -->
+    <div class="text-center lg:w-[40%] mx-auto px-5 lg:py-[100px] py-[100px]">
+        <h1 class="font-semibold text-3xl my-5">Appointment Confirmation & Details</h1>
+        <div class="flex text-center justify-center items-center gap-3">
+            <p class="text-[12px] font-medium hover:text-blue-600"><a href="appointPage.html">BOOK APPOINTMENT</a></p>
+            <p class="text-[12px] font-medium">></p>
+            <p class="text-[12px] font-medium text-blue-600">CONFIRMATION</p>
+        </div>
+    </div>
+    <div class="border shadow w-[80%] mx-auto relative p-16">
+        <div class="bg-blue-700 w-[15px] lg:w-[25px] h-[100%] absolute right-0 top-0"></div>
+        <div class="bg-blue-700 w-[15px] lg:w-[25px] h-[40%] absolute right-[35px] bottom-0"></div>
+        <div class="flex items-center mb-[70px]">
+            <img class="size-12" src="./img/logo-icon.png" alt="">
+            <div class="flex  flex-col gap-0">
+                <h1 class="font-semibold text-xl">BORNIAN</h1>
+                <p>Pharmaceutical</p>
+            </div>
+        </div>
+        <div id="appointmentDetails">
+            <div class="">
+                <h1 class="font-semibold text-2xl text-center mb-10">Appointment Confirmation – [Patient’s Name] – [Date and Time]</h1>
+                <h2 class="font-semibold text-lg mb-5">Dear [Patient’s Name],</h2>
+                <p class="mb-5">Here's a confirmation of your upcoming appointment at <b>Bornian Pharmaceutical</b>. We appreciate your trust in our services and are committed to providing you with exceptional medical care. Below are the details of your confirmed appointment:</p>
+                <p class="font-medium mb-1">Patient: [Patient’s Name]</p>
+                <p class="font-medium mb-1">Date: [Appointment Date]</p>
+                <p class="font-medium mb-1">Time: [Appointment Time]</p>
+                <p class="font-medium mb-1">Doctor: [Doctor’s Name]</p>
+                <p class="font-medium mb-5">Location: [Medical Practice Address]</p>
+                <p class="mb-5">Please ensure that you arrive at least 15 minutes before your scheduled appointment time to complete any necessary paperwork. If, for any reason, you are unable to attend the appointment, kindly inform us at least 24 hours in advance by calling our office at [Contact Number]. This will allow us to offer the appointment to another patient in need of medical attention.</p>
+                <p class="mb-5">In case of any questions or concerns, please do not hesitate to reach out to us. We are here to provide you with the best possible care and support.</p>
+                <p class="mb-5">We look forward to seeing you soon and assisting you with your healthcare needs.</p>
+                <p class="mb-">Warm regards.</p>
+                <p class="font-semibold text-lg">Management</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script>
+        let patientDetails = JSON.parse(localStorage.getItem('patient Details'))
+        console.log(patientDetails);
+        document.getElementById('appointmentDetails').innerHTML = `
+           <div class="">
+                <h1 class="font-semibold text-2xl text-center mb-10">Appointment Confirmation</h1>
+                <h2 class="font-semibold text-lg mb-5">Dear ${patientDetails.name},</h2>
+                <p class="mb-5">Here's a confirmation of your upcoming appointment at <b>Bornian Pharmaceutical</b>. We appreciate your trust in our services and are committed to providing you with exceptional medical care. Below are the details of your confirmed appointment:</p>
+                <p class="font-medium mb-1">Patient: ${patientDetails.name}</p>
+                <p class="font-medium mb-1">Date: ${patientDetails.date}</p>
+                <p class="font-medium mb-1">Time: ${patientDetails.time}</p>
+                <p class="font-medium mb-1">Doctor: ${patientDetails.doctor}</p>
+                <p class="font-medium mb-5">Location: Bornian Pharmaceuticals Premises</p>
+                <p class="mb-5">Please ensure that you arrive at least 15 minutes before your scheduled appointment time to complete any necessary paperwork. If, for any reason, you are unable to attend the appointment, kindly inform us at least 24 hours in advance by calling our office at [Contact Number]. This will allow us to offer the appointment to another patient in need of medical attention.</p>
+                <p class="mb-5">In case of any questions or concerns, please do not hesitate to reach out to us. We are here to provide you with the best possible care and support.</p>
+                <p class="mb-5">We look forward to seeing you soon and assisting you with your healthcare needs.</p>
+                <p class="mb-">Warm regards.</p>
+                <p class="font-semibold text-lg">Management</p>
+            </div> 
+        `
+    </script>
+</body>
+</html>

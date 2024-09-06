@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                clifford: '#da373d',
+                time: 'rgb(60 72 88 / 70%)',
+                foot: '#202942'
+            }
+            }
+        }
+        }
+    </script>
+    <style>
+        #navBar{
+            transition: all .5s ease-in-out;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-gray-100 h-[65vh] lg:rounded-b-[300px] lg:h-[70vh] mb-[80px]">
+        <nav id="navBar" class="lg:px-[50px] xl:px-[200px] bg-white border-b lg:border-0 lg:bg-transparent px-[20px] py-5 z-50 flex items-center justify-between fixed top-0 left-0 right-0 z-50">
+            <div class="flex items-center gap-1">
+                <img class="size-6" src="./img/logo-icon.png" alt="">
+                <h1 class="text-2xl font-semibold">Bornian</h1>
+            </div>
+            <!-- desktop view of nav -->
+            <ul class="hidden lg:flex items-center gap-8">
+                <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+                <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+                <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+                <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+                <li class="text-black text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+            </ul>
+            <div class="hidden lg:flex gap-1">
+                <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+                <button class="border text-sm border-blue-700 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+            </div>
+            <!-- bugger menu -->
+            <div id="menu" class="lg:hidden">
+                <img class="size-8 cursor-pointer" src="./img/menu.png" alt="">
+            </div>
+        </nav>
+        <!-- mobile view of nav -->
+        <div id="mobileView" class="bg-white px-[20px] py-3 lg:hidden hidden z-50 absolute  top-0 left-0 right-0">
+            <div id="closeMenu" class="text-2xl font-semibold text-right cursor-pointer">X</div>
+            <ul class="flex flex-col gap-5 mb-[20px]">
+                <li class="text-sm font-semibold hover:text-blue-500"><a href="#">HOME</a></li>
+                <li class="text-sm font-semibold hover:text-blue-500"><a href="#">DOCTORS</a></li>
+                <li class="text-sm font-semibold hover:text-blue-500"><a href="#">AVAILABILITY</a></li>
+                <li class="text-sm font-semibold hover:text-blue-500"><a href="#">OUR SERVICES</a></li>
+                <li class="text-sm font-semibold hover:text-blue-500"><a href="#">ABOUT US</a></li>
+            </ul>
+            <div class="flex gap-3">
+                <button class="border text-sm border-blue-600 border-2 bg-blue-600 text-white px-5 font-semibold py-1 hover:bg-blue-700 hover:border-blue-700">Login</button>
+                <button class="border text-sm border-blue-600 text-blue-600 border-2 px-5 font-semibold py-1 hover:bg-blue-700 hover:text-white">Sign up</button>
+            </div>
+        </div>
+        <!-- hero text -->
+        <div class="text-center lg:w-[40%] mx-auto px-5 lg:pt-[200px] pt-[150px]">
+            <h1 class="font-semibold text-3xl my-5">Book an appointment</h1>
+            <p class="text-gray-400 text-md mb-5">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+            <div class="flex text-center justify-center items-center gap-3">
+                <p class="text-[12px] font-medium hover:text-blue-600"><a href="index.html">BORNIAN</a></p>
+                <p class="text-[12px] font-medium">></p>
+                <p class="text-[12px] font-medium text-blue-600">APPOINTMENT</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- fform -->
+    <div class="lg:w-[50%] w-[90%] mx-auto mb-[100px] border-2 rounded-xl">
+        <div class="grid lg:grid-cols-2">
+            <div class="bg-blue-700 text-white text-xl text-center font-medium py-3 lg:rounded-tl-xl rounded-t-xl">Clinic Appointment</div>
+            <div class="bg-gray-100 text-xl text-center font-medium py-3 lg:rounded-tr-xl">Online Appointment</div>
+        </div>
+        <div class="p-3">
+            <form onsubmit="bookAppointment(event)">
+                <div class="mb-5">
+                    <label for="name">Patient Name <span class="text-red-600">*</span></label>
+                    <input id="name" type="text" placeholder="Patient Name:" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                    <p id="err" class="absolute text-red-600 text-[12px]"></p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label for="department">Department</label>
+                        <select name="department" id="specialization" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                            <option value="">Select Department</option>
+                            <option value="Eye Care">Eye Care</option>
+                            <option value="Psychotherapy">Psychotherapy</option>
+                            <option value="Primary Care">Primary Care</option>
+                            <option value="Dental Care">Dental Care</option>
+                            <option value="Orthopedic">Orthopedic</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Gynecology">Gynecology</option>
+                            <option value="Neurology">Neurology</option>
+                        </select>
+                        <p id="err2" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                    <div>
+                        <label for="doctor">Doctor</label>
+                        <select name="" id="doctors" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                            <option value="">Select Doctor</option>
+                            <option id="eyecareDoc" class="hidden" value="Calvin Carlo">Calvin Carlo</option>
+                            <option id="eyecareDoc2" class="hidden" value="jACKSON">Jackson Gabriel</option>
+                            <option id="Psychotherapy" class="hidden" value="Alia Reddy">Alia Reddy</option>
+                            <option id="PrimaryCare" class="hidden" value="Jennifer Ballance">Jennifer Ballance</option>
+                            <option id="DentalCare" class="hidden" value="Toni Kovar">Toni Kovar</option>
+                            <option id="Orthopedic" class="hidden" value="Cristino Murphy">Cristino Murphy</option>
+                            <option id="Cardiology" class="hidden" value="Tara Arrington">Tara Arrington</option>
+                        </select>
+                        <p id="err3" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label for="department">Your Email <span class="text-red-600">*</span></label>
+                        <input id="email" type="text" placeholder="Email:" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                        <p id="err4" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                    <div>
+                        <label for="doctor">Your Phone <span class="text-red-600">*</span></label>
+                        <input id="phoneNumber" type="text" placeholder="Phone:" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                        <p id="err5" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label for="date">Date<span class="text-red-600">*</span></label>
+                        <input id="date" type="date" class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                        <p id="err7" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                    <div>
+                        <label for="time">Time<span class="text-red-600">*</span></label>
+                        <input id="time" type="time"class="border w-[100%] px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-blue-600">
+                        <p id="err8" class="absolute text-red-600 text-[12px]"></p>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <label for="date">Comment <span class="text-red-600">*</span></label>
+                    <textarea name="" id="Comment"  cols="30" rows="5" class="border w-[100%] rounded-lg outline-none focus:ring-1 focus:ring-blue-600 px-3 py-2" placeholder="Your Message:"></textarea>
+                    <p id="err6" class="absolute text-red-600 text-[12px]"></p>
+                </div>
+                <div>
+                    <button type="submit" class="bg-blue-600 rounded-md text-white px-4 py-2 hover:bg-blue-700 w-full">Book An Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="bg-foot lg:px-[50px] xl:px-[200px] px-[20px]">
+            <div class="bolck lg:flex gap-[80px] py-14 border-b">
+                <div class="mb-10">
+                    <div class="flex items-center gap-1 mb-4">
+                        <img class="size-6" src="./img/logo-icon.png" alt="">
+                        <h1 class="text-2xl font-semibold text-white">Bornian</h1>
+                    </div>
+                    <p class="text-gray-400 text-md">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+                </div>
+                <div class="mb-10">
+                    <h1 class="text-2xl font-semibold text-white mb-5">Company</h1>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> About us</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Services</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Team</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Project</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Blog</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Login</a></p>
+                </div>
+                <div class="mb-10">
+                    <h1 class="text-2xl font-semibold text-white mb-5">Departments</h1>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Eye Care</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Psychotherapy</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Dental Care</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Orthopedic</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Cardiology</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Gynecology</a></p>
+                    <p class="text-gray-400 text-md hover:text-white mb-2"><a href="#">> Neurology</a></p>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-semibold text-white mb-5">Contact us</h1>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">Email: contact@example.com</a></p>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">Phone: +152 534-468-854</a></p>
+                    <p class="text-gray-400 text-md hover:text-white"><a href="#">View on Google map</a></p>
+                </div>
+            </div>
+            <div class="text-center flex flex-col lg:flex-row justify-center items-center lg:justify-between py-10">
+                <p class="text-gray-400 text-md mb-5 lg:m-0">2024 © Bornian. Design with ❤️ by Shreethemes and Recreated ❤️❤️ by Jackson.</p>
+                <ul class="flex items-center gap-2">
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Terms</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Privacy</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">About</a></li>
+                    <li class="text-gray-400 text-md hover:text-white"><a href="£">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.addEventListener('scroll', function(){
+            var scrollPosition = window.scrollY || window.pageYOffset
+            if (scrollPosition > 50) {
+                document.querySelector('#navBar').classList.add('lg:bg-white', 'shadow')
+            } else{
+                document.querySelector('#navBar').classList.remove('lg:bg-white', 'shadow')
+            }
+        })
+    </script>
+</body>
+</html>
